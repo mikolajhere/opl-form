@@ -37,7 +37,8 @@ h5,
 p,
 div,
 input,
-label {
+label,
+textarea {
   font-family: "Lato", sans-serif;
 }
 
