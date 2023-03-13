@@ -11,8 +11,8 @@ export function DateForm({ updateFields }) {
   };
 
   return (
-    <FormWrapper title="Termin">
-      <label htmlFor="date">Wybierz datę:</label>
+    <FormWrapper>
+      <label htmlFor="date">Wskaż datę odbioru:</label>
       <input
         autoFocus
         type="date"

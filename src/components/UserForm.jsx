@@ -2,7 +2,7 @@ import { FormWrapper } from "./FormWrapper";
 
 export function UserForm({ dataPhone, serviceHomeType, updateFields }) {
   return (
-    <FormWrapper title="Podstawowe dane">
+    <FormWrapper>
       <label htmlFor="dataPhone">Numer telefonu</label>
       <input
         autoFocus
@@ -40,7 +40,7 @@ export function UserForm({ dataPhone, serviceHomeType, updateFields }) {
               className="form-check-input contractType"
               value="390"
               name="dataValues[serviceHomeType]"
-              id="defaultCheck42" 
+              id="defaultCheck42"
               onChange={(e) =>
                 updateFields({ "dataValues[serviceHomeType]": e.target.value })
               }

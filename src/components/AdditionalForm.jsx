@@ -2,7 +2,7 @@ import { FormWrapper } from "./FormWrapper";
 
 export function AdditionalForm({ dataLog, updateFields }) {
   return (
-    <FormWrapper title="Dodatkowe informacje">
+    <FormWrapper>
       <label htmlFor="dataLog">Dodatkowe informacje</label> 
       <textarea
         type="text"

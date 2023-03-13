@@ -7,7 +7,7 @@ export function ContactForm({
   updateFields,
 }) {
   return (
-    <FormWrapper title="Dodatkowe dane">
+    <FormWrapper>
       <label htmlFor="dataUpdateEmail">E-mail</label>
       <input
         autoFocus
