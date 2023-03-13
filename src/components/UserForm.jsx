@@ -40,8 +40,7 @@ export function UserForm({ dataPhone, serviceHomeType, updateFields }) {
               className="form-check-input contractType"
               value="390"
               name="dataValues[serviceHomeType]"
-              id="defaultCheck42"
-              checked
+              id="defaultCheck42" 
               onChange={(e) =>
                 updateFields({ "dataValues[serviceHomeType]": e.target.value })
               }
