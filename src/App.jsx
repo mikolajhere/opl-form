@@ -42,27 +42,29 @@ export const App = () => {
     });
   }
 
-  const { isFirstStep, step, isSecondStep, isLastStep, next } =
-    UseMultistepForm([
-      <UserForm {...data} updateFields={updateFields} />,
-      <ContactForm {...data} updateFields={updateFields} />,
-      <AddressForm {...data} updateFields={updateFields} />,
-      <DateForm {...data} updateFields={updateFields} />,
-      <AdditionalForm {...data} updateFields={updateFields} />,
-      <ThankYouForm {...data} updateFields={updateFields} />,
-    ]);
+  const { isFirstStep, step, isLastStep, next } = UseMultistepForm([
+    <UserForm {...data} updateFields={updateFields} />,
+    <ContactForm {...data} updateFields={updateFields} />,
+    <AddressForm {...data} updateFields={updateFields} />,
+    <DateForm {...data} updateFields={updateFields} />,
+    <AdditionalForm {...data} updateFields={updateFields} />,
+    <ThankYouForm {...data} updateFields={updateFields} />,
+  ]);
 
   function onSubmit(e) {
     e.preventDefault();
 
     if (isFirstStep) {
-      fetch("", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
+      fetch(
+        "https://system.pewnylokal.pl/crm/api/newEndpoint.php?format=json",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      )
         .then((response) => response.json())
         .then((data) => {
           setData({
@@ -84,14 +86,17 @@ export const App = () => {
         clientHash: data.clientHash,
         submit: 1,
       });
-    } else if (!isLastStep) { 
-      fetch("", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
+    } else if (!isLastStep) {
+      fetch(
+        "https://system.pewnylokal.pl/crm/api/updateClientData.php?format=json",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      )
         .then((response) => {
           response.json();
         })
