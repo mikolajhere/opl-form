@@ -246,7 +246,7 @@ label {
 
 .propertyContainer {
   display: flex;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .propertyContainer .form-check:not(:last-of-type) {
@@ -296,4 +296,13 @@ label {
 .propertyContainer input[type="radio"]:checked + label {
   background-color: #ffdc00;
   font-weight: bold;
+}
+
+textarea:focus,
+input:focus,
+select:focus,
+a:focus,
+button:focus-visible {
+  outline: 3px solid #d8bb00;
+  /* border-radius: 5px; */
 }
