@@ -18,7 +18,7 @@ const INITIAL_DATA = {
     4: "1",
   },
   "dataValues[serviceDataType]": 394,
-  "dataValues[serviceClientSource]": 19,
+  "dataValues[serviceClientSource]": 20,
   "dataValues[serviceClientChannel]": 39,
   "dataValues[serviceDataAddressCityText]": "",
   "dataValues[serviceDataAddress]": "",
@@ -84,8 +84,7 @@ export const App = () => {
         clientHash: data.clientHash,
         submit: 1,
       });
-    } else if (!isLastStep) {
-      console.log(data);
+    } else if (!isLastStep) { 
       fetch("", {
         method: "POST",
         headers: {
