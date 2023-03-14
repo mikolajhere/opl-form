@@ -79,7 +79,7 @@ img.logo {
     max-width: max-content;
   }
   .form-content {
-    min-height: 400px;
+    min-height: 350px;
   }
 }
 @media (min-width: 992px) {
@@ -292,6 +292,11 @@ label {
 
 .propertyContainer input[type="radio"] {
   display: none;
+}
+
+.propertyContainer input[type="radio"]:hover + label {
+  background-color: #ffef84;
+  font-weight: bold;
 }
 
 .propertyContainer input[type="radio"]:checked + label {

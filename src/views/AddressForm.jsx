@@ -1,4 +1,4 @@
-import { FormWrapper } from "./FormWrapper";
+import { FormWrapper } from "../components/FormWrapper";
 
 export function AddressForm({
   serviceDataAddressCityTextText,

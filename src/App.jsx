@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { ContactForm } from "./components/ContactForm";
+import { ContactForm } from "./views/ContactForm";
 import { UseMultistepForm } from "./components/UseMultistepForm";
-import { UserForm } from "./components/UserForm";
-import { DateForm } from "./components/DateForm";
-import { AddressForm } from "./components/AddressForm";
-import { AdditionalForm } from "./components/AdditionalForm";
-import { ThankYouForm } from "./components/ThankYouForm";
+import { UserForm } from "./views/UserForm";
+import { DateForm } from "./views/DateForm";
+import { AddressForm } from "./views/AddressForm";
+import { AdditionalForm } from "./views/AdditionalForm";
+import { ThankYouForm } from "./views/ThankYouForm";
 import "../src/styles/App.css";
 
 const INITIAL_DATA = {
@@ -117,10 +117,14 @@ export const App = () => {
 
   return (
     <>
-      <img src="/img/opl-logo.png" className="logo" alt="" />
+      <img src="/img/opl-logo.png" className="logo" alt="logo" />
       <div className="form-container">
         <div className="num-of-page">
-          <h1>Zarezerwuj termin odbioru</h1>
+          {isLastStep ? (
+            <h1>Dziękujemy</h1>
+          ) : (
+            <h1>Zarezerwuj termin odbioru</h1>
+          )}
         </div>
         <form onSubmit={onSubmit}>
           {step}
