@@ -260,12 +260,8 @@ label {
 }
 
 .propertyContainer .form-check label {
-  /* border: 0; */
+  padding-inline: 10px;
   border: 1px solid black;
-}
-
-.propertyContainer .form-check:nth-of-type(3) label {
-  padding-inline: 20px;
 }
 
 .propertyContainer label {
@@ -287,9 +283,6 @@ label {
 .propertyContainer .form-check input[type="radio"] + label {
   border-radius: 0.25rem;
 }
-/* .propertyContainer .form-check:nth-of-type(3) input[type="radio"] + label {
-  border-radius: 0 0.25rem 0.25rem 0;
-} */
 
 .propertyContainer input[type="radio"] {
   display: none;
