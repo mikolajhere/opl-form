@@ -248,6 +248,7 @@ label {
 .propertyContainer {
   display: flex;
   margin-bottom: 2rem;
+  gap: 1rem;
 }
 
 .propertyContainer .form-check:not(:last-of-type) {
@@ -258,9 +259,9 @@ label {
   border: solid 1px #000;
 }
 
-.propertyContainer .form-check:nth-of-type(2) label {
-  border: 0;
-  border-block: 1px solid black;
+.propertyContainer .form-check label {
+  /* border: 0; */
+  border: 1px solid black;
 }
 
 .propertyContainer .form-check:nth-of-type(3) label {
@@ -283,12 +284,12 @@ label {
   margin-bottom: 0;
 }
 
-.propertyContainer .form-check:nth-of-type(1) input[type="radio"] + label {
-  border-radius: 0.25rem 0 0 0.25rem;
+.propertyContainer .form-check input[type="radio"] + label {
+  border-radius: 0.25rem;
 }
-.propertyContainer .form-check:nth-of-type(3) input[type="radio"] + label {
+/* .propertyContainer .form-check:nth-of-type(3) input[type="radio"] + label {
   border-radius: 0 0.25rem 0.25rem 0;
-}
+} */
 
 .propertyContainer input[type="radio"] {
   display: none;
