@@ -49,6 +49,7 @@ export function AddressForm({
           updateFields({ tips: e.target.value });
           handleChange();
         }}
+        defaultValue=" "
       />
     </FormWrapper>
   );
