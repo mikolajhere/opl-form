@@ -3,11 +3,11 @@ import { FormWrapper } from "../components/FormWrapper";
 export function AddressForm({
   serviceDataAddressCityTextText,
   serviceDataAddress,
-  tips,
-  street,
+  tips = "",
+  street = "",
   updateFields,
 }) {
-  const handleChange = (e) => {
+  const handleChange = (e) => {  
     updateFields({
       "dataValues[serviceDataAddress]": `${street} (${tips})`,
     });
@@ -48,8 +48,7 @@ export function AddressForm({
         onChange={(e) => {
           updateFields({ tips: e.target.value });
           handleChange();
-        }}
-        defaultValue=" "
+        }} 
       />
     </FormWrapper>
   );
