@@ -10,7 +10,7 @@ export function AddressForm({
 }) {
   useEffect(() => {
     updateFields({
-      "dataValues[serviceDataAddress]": `${street}${tips ? ` (${tips})` : ""}`,
+      "dataValues[serviceDataAddress]": `${street ? street : ""}${tips ? ` (${tips})` : ""}`,
     });
   }, [street, tips]);
 
