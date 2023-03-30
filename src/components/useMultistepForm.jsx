@@ -9,13 +9,7 @@ export function UseMultistepForm(steps) {
       return i + 1;
     });
   }
-
-  function back() {
-    setCurrentStepIndex((i) => {
-      if (i <= 0) return i;
-      return i - 1;
-    });
-  }
+ 
 
   function goTo(index) {
     setCurrentStepIndex(index);
@@ -29,7 +23,6 @@ export function UseMultistepForm(steps) {
     isFirstStep: currentStepIndex === 0,
     isLastStep: currentStepIndex === steps.length - 1,
     goTo,
-    next,
-    back,
+    next, 
   };
 }

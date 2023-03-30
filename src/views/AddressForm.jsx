@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { FormWrapper } from "../components/FormWrapper";
 
 export function AddressForm({
@@ -6,12 +7,12 @@ export function AddressForm({
   tips,
   street,
   updateFields,
-}) {
-  const handleChange = (e) => {
+}) { 
+  useEffect(() => {
     updateFields({
-      "dataValues[serviceDataAddress]": `${street} (${tips})`,
+      "dataValues[serviceDataAddress]": `${street}${tips ? ` (${tips})` : ""}`,
     });
-  };
+  }, [street, tips]);
 
   return (
     <FormWrapper>
@@ -49,7 +50,6 @@ export function AddressForm({
           updateFields({ tips: e.target.value });
           handleChange();
         }}
-        defaultValue=" "
       />
     </FormWrapper>
   );
