@@ -7,6 +7,7 @@ import { AddressForm } from "./views/AddressForm";
 import { AdditionalForm } from "./views/AdditionalForm";
 import { ThankYouForm } from "./views/ThankYouForm";
 import "../src/styles/App.css";
+import useAddHiddenInputs from "./scripts/Hidden";
 
 const INITIAL_DATA = {
   dataLog: "",
@@ -35,6 +36,16 @@ const INITIAL_DATA = {
 
 export const App = () => {
   const [data, setData] = useState(INITIAL_DATA);
+  useAddHiddenInputs("my-form", []);
+
+  const hiddensObj = {};
+
+  setTimeout(() => {
+    const hiddens = document.querySelectorAll("input[type='hidden']");
+    hiddens.forEach((hidden) => {
+      hiddensObj[hidden.name] = hidden.value;
+    });
+  }, 1);
 
   function updateFields(fields) {
     setData((prev) => {
@@ -55,6 +66,8 @@ export const App = () => {
     e.preventDefault();
 
     if (isFirstStep) {
+      const formData = { ...data, ...hiddensObj };
+      console.log({ formData });
       fetch(
         "https://system.pewnylokal.pl/crm/api/newEndpoint.php?format=json",
         {
@@ -62,7 +75,7 @@ export const App = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify(formData),
         }
       )
         .then((response) => response.json())
@@ -126,7 +139,7 @@ export const App = () => {
             <h1>Zarezerwuj termin odbioru</h1>
           )}
         </div>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} id="my-form">
           {step}
           {isLastStep ? (
             <></>
