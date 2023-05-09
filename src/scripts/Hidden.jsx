@@ -223,7 +223,9 @@ const useAddHiddenInputs = (formId, inputs) => {
             email: getValueOrNull(
               form.querySelectorAll("input[name='dataEmail']")[0]
             ),
-            inne_dane: tekst,
+            inne_dane:
+              tekst +
+              "<br>dataValues[serviceDataType]:394<br>dataValues[serviceClientSource]:20",
           })
         );
       }
