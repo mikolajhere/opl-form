@@ -27,6 +27,7 @@ const INITIAL_DATA = {
   "dataValues[serviceDataArea]": "",
   "dataValues[serviceHomeType]": "",
   "dataValues[serviceDataServiceDate]": "",
+  "dataValues[serviceDataServiceDateAccuracyBox]": 627,
   dataUpdateEmail: "",
   docs: "",
   submit: 1,
