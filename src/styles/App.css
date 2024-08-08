@@ -3,7 +3,7 @@
 
 body {
   min-height: 100vh;
-  background: url("../img/opl.svg") no-repeat left fixed;
+  background: url("opl.svg") no-repeat left fixed;
   background-size: cover;
   object-fit: cover;
   background-position: left;
@@ -14,7 +14,7 @@ body {
 
 @media (max-width: 450px) {
   body {
-    background: url("../img/opl.svg") no-repeat left fixed;
+    background: url("opl.svg") no-repeat left fixed;
     background-size: cover;
     background-position: 16%;
   }
